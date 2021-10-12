@@ -5,8 +5,8 @@ use rand::Rng;
 
 pub fn run() {
     println!("Welcome to the guessing game!");
+
     let secret_num = rand::thread_rng().gen_range(0..101);
-    println!("The secret number is {}", secret_num);
     loop {
         print!("Please enter your input: ");
         io::stdout().flush().unwrap(); // ensure above line prints immediately
@@ -24,7 +24,7 @@ pub fn run() {
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),
             Ordering::Equal => {
-                println!("You're right!");
+                println!("You win!");
                 break;
             },
         };
